@@ -1,5 +1,5 @@
 // import Image from "next/image";
-import LandingPage from "../components/website/landingPage/Landingpage"; 
+import LandingPage from "@/components/website/landingPage/Landingpage"; 
 export default function Home() {
   return (
     <div className="">
