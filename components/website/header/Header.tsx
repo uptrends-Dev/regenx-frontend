@@ -11,7 +11,7 @@ export default function Header() {
     "hidden lg:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent disabled:opacity-60";
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-[#0b0e14]/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-[#0b0e14] backdrop-blur-xl">
       {/* faint starry gradient highlight on the right */}
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-indigo-500/15 via-purple-500/10 to-transparent blur-2xl" />
 
