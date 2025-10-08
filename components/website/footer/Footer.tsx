@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative mt-24 border-t border-white/5 bg-[#0b0e14] text-zinc-300">
+    <footer className="relative  border-t border-white/5 bg-[#0b0e14] text-zinc-300">
       {/* faint top highlight */}
       <div className="pointer-events-none absolute inset-x-0 -top-12 h-12 bg-gradient-to-b from-indigo-500/15 to-transparent blur-2xl" />
 

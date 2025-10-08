@@ -19,7 +19,7 @@ export default function Header() {
         {/* Left: Brand (optional) */}
         <div className="flex items-center gap-3">
           <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-500 shadow-lg shadow-indigo-900/30" />
-          <span className="hidden text-sm font-semibold tracking-wide text-zinc-200 sm:block">
+          <span className=" text-sm font-semibold tracking-wide text-zinc-200 sm:block">
             REGENX
           </span>
         </div>
