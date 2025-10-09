@@ -47,14 +47,14 @@ export default function Hero({
           <a
             href="#invest"
             onClick={onInvestClick}
-            className="inline-flex items-center justify-center rounded-full border border-emerald-400/60 bg-emerald-300/10 px-6 py-3 text-sm font-semibold text-emerald-200 backdrop-blur-sm transition hover:bg-emerald-300/20 focus:outline-none focus:ring-2 focus:ring-emerald-300/50"
+            className="inline-flex items-center justify-center rounded-full border border-blue bg-emerald-300/10 px-6 py-3 text-sm font-semibold text-blue-200 backdrop-blur-sm transition hover:bg-blue-300/20 focus:outline-none focus:ring-2 focus:ring-blue-300/50"
           >
             Invest in RegenX
           </a>
         </div>
 
         {/* Optional tiny caption */}
-        <p className="mt-6 text-xs text-zinc-400">
+        <p className="mt-6 text-sm text-lightGray">
           Pioneering therapies, ethical science, and measurable outcomes.
         </p>
       </div>

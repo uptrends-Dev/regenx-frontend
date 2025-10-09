@@ -2,7 +2,7 @@
 import Hero from "@/components/website/landingPage/Hero";
 import MarketOpportunityHighlight from "@/components/website/landingPage/MarketOpportunityHighlight";
 import MissionSection from "@/components/website/landingPage/MissionSection";
-import TestimonialsOrPartners from "@/components/website/landingPage/TestimonialsOrPartners";
+import {TestimonialsOrPartners} from "../components/website/landingPage/testiDemo";
 import ThreePillarsSnapshot from "@/components/website/landingPage/ThreePillarsSnapshot";
 export default function Home() {
   return (
@@ -10,8 +10,8 @@ export default function Home() {
       <>
         <Hero backgroundUrl="/images/p2.jpg" />
         <MissionSection />
-        <ThreePillarsSnapshot />
         <MarketOpportunityHighlight />
+        <ThreePillarsSnapshot />
         <TestimonialsOrPartners />
         
       </>

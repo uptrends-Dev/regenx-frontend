@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 export default function Header() {
   const navBase =
-    "relative px-4 py-2 text-sm font-medium text-zinc-300 transition hover:text-white";
+    "relative px-4 py-2 text-sm font-medium text-lightGray transition hover:text-white";
 
   const pillBase =
     "hidden lg:inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent disabled:opacity-60";
@@ -18,8 +18,8 @@ export default function Header() {
       <div className="relative mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
         {/* Left: Brand (optional) */}
         <div className="flex items-center gap-3">
-          <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-500 shadow-lg shadow-indigo-900/30" />
-          <span className=" text-sm font-semibold tracking-wide text-zinc-200 sm:block">
+          <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue shadow-lg shadow-indigo-900/30" />
+          <span className=" text-sm font-semibold tracking-wide text-blue sm:block">
             REGENX
           </span>
         </div>
@@ -84,7 +84,7 @@ export default function Header() {
           {/* Contact Us (outline glowing) */}
           <Link
             href="#"
-            className={`${pillBase}   border border-indigo-400/40 bg-indigo-500/10 text-indigo-200 hover:border-indigo-400 hover:bg-indigo-500/20 focus:ring-indigo-400/50`}
+            className={`${pillBase}   border border-blue/50 bg-blue/10 text-blue hover:border-indigo-400 hover:bg-blue-500/20 focus:ring-blue-400/50`}
           >
             Contact Us
           </Link>

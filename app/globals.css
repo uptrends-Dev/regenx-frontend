@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
-*{
-    scroll-behavior: smooth;
+* {
+  scroll-behavior: smooth;
+}
+@theme{
+    --color-darkGray: #3c4652;
+    /* --color-midGray: #3c4652; */
+    --color-lightGray: #d4d3d4;
+    --color-blue: #9bcbeb;
+    --color-pink: #A55E8A;
+}
+.market {
+  background-image: url("../public/images/p4.jpg");
+  background-attachment: fixed;
+  background-size: cover;
 }
