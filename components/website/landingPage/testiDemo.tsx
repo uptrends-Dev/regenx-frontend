@@ -36,7 +36,6 @@ function rotateRight<T>(arr: T[]): T[] {
   const last = arr[arr.length - 1]!;
   return [last, ...arr.slice(0, -1)];
 }
-
 function TestimonialsOrPartners(): JSX.Element {
   const [positions, setPositions] = useState<Position[]>([
     "front",
