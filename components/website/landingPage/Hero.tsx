@@ -8,7 +8,7 @@ type Props = {
 
 export default function Hero({
   backgroundUrl =
-    "/images/p2.jpg", // DNA-looking abstract
+    "/images/p7.jpg", // DNA-looking abstract
   onExploreClick,
   onInvestClick,
 }: Props) {

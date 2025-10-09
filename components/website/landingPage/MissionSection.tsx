@@ -16,9 +16,9 @@ type Props = {
 };
 
 export default function MissionSection({
-  primaryImage = "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop",
-  secondaryImage = "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop",
-  heading = "Welcome to REGENX  Hospital",
+  primaryImage = "/images/p9.jpg",
+  secondaryImage = "/images/p10.jpg",
+
   intro = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam corrupti ratione, sit Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam corrupti ratione, sit, nostrum quod! Libero, deleniti praesentium. Quas, voluptatibus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam corrupti ratione, sit adipisci nesciunt amet! Tempore reiciendis nam laboriosam inventore quae ratione et, nostrum quod! Libero, deleniti praesentium. Quas, voluptatibus. ",
   bullets = [
     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam corrupti ratione, sit adipisci nesciunt amet! Tempore reiciendis nam laboriosam inventore quae ratione et, nostrum quod! Libero, deleniti praesentium. Quas, voluptatibus.",
@@ -28,7 +28,6 @@ export default function MissionSection({
 }: Props) {
   return (
     <section className="w-full bg-white">
-      
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 lg:grid-cols-2 md:items-start lg:gap-16 place-items-center ">
         {/* Left: stacked images */}
         <div className="relative order-2 md:order-1">
@@ -53,9 +52,9 @@ export default function MissionSection({
         {/* Right: heading + copy + checklist */}
         <div className="order-1 md:order-2">
           <div className="mb-6 flex items-center gap-4">
-            <div className="h-[2px] w-10 rounded bg-amber-500" />
-            <h2 className="text-xl font-semibold text-zinc-900 sm:text-2xl">
-              {heading}
+            <div className="h-[2px] w-10 rounded bg-blue-600" />
+            <h2 className="text-xl font-extrabold text-blue sm:text-2xl">
+              Welcome to <span className="text-darkGray">REGENX</span> Hospital
             </h2>
           </div>
 
@@ -64,8 +63,8 @@ export default function MissionSection({
           <ul className="mt-8 space-y-5">
             {bullets.map((line, i) => (
               <li key={i} className="flex max-w-xl items-start gap-4">
-                <span className="mt-0.5 inline-flex h-9 w-9 flex-none items-center justify-center rounded-full bg-amber-50 ring-1 ring-amber-200">
-                  <Check className="h-5 w-5 text-amber-600" />
+                <span className="mt-0.5 inline-flex h-9 w-9 flex-none items-center justify-center rounded-full bg-blue-50 ring-1 ring-blue-200">
+                  <Check className="h-5 w-5 text-blue-600" />
                 </span>
                 <p className="text-zinc-700">{line}</p>
               </li>

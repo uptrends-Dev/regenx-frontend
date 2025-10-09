@@ -18,7 +18,10 @@ export default function Header() {
       <div className="relative mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
         {/* Left: Brand (optional) */}
         <div className="flex items-center gap-3">
-          <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue shadow-lg shadow-indigo-900/30" />
+          {/* <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-purple-500 to-blue shadow-lg shadow-indigo-900/30" /> */}
+          <div className="logo">
+            <img src="/images/logo222.png" alt="" />
+          </div>
           <span className=" text-sm font-semibold tracking-wide text-blue sm:block">
             REGENX
           </span>

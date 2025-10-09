@@ -59,7 +59,7 @@ export default function ThreePillarsSnapshot() {
   return (
     <section className="w-full bg-lightGray/20">
       <div className="py-12 px-6 max-w-7xl mx-auto text-center text-black">
-        <h2 className="text-3xl font-semibold sm:text-4xl">Our Three Pillars</h2>
+        <h2 className="text-3xl slate-900 font-extrabold sm:text-4xl">Our Three Pillars</h2>
         <p className="mt-4 max-w-3xl mx-auto text-base text-darkGray">
           At RegenX, our strength lies in three core pillars that drive innovation in healthcare.
         </p>
