@@ -7,6 +7,8 @@ import ThreePillarsSnapshot from "@/components/website/landingPage/ThreePillarsS
 import RegenxModel from "@/components/website/landingPage/modals";
 import OurModelSection from "@/components/website/landingPage/modals";
 import RegenxInnovateSlide from "@/components/website/landingPage/RegenxInnovateSlide";
+import RegenxSolutionSection from "@/components/website/landingPage/RegenxSolutionSection";
+import ContactSection from "@/components/website/landingPage/ContactSection";
 export default function Home() {
   return (
     <div className="">
@@ -17,17 +19,9 @@ export default function Home() {
         <ThreePillarsSnapshot />
         <RegenxInnovateSlide />
         <OurModelSection />
-        {/* <TestimonialsOrPartners /> */}
-        {/* <RegenxModel
-          pillar2Bg={{
-            url: "/images/lab-1.jpg",
-            overlayClassName: "bg-white/75",
-          }}
-          pillar3Bg={{
-            url: "/images/lab-2.jpg",
-            overlayClassName: "bg-white/75",
-          }}
-        /> */}
+        <RegenxSolutionSection />
+        <ContactSection />
+       
       </>
     </div>
   );
