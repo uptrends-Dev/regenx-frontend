@@ -1,11 +1,7 @@
+"use client";
 import React from "react";
 import { Check } from "lucide-react";
-
-/**
- * ABC-style welcome section
- * Matches the reference: stacked images on the left, heading + paragraph + checklist on the right.
- * Tailwind only; swap images/text via props.
- */
+import { motion, useReducedMotion } from "framer-motion";
 
 type Props = {
   primaryImage?: string;
@@ -30,44 +26,77 @@ export default function MissionSection({
     <section className="w-full bg-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 lg:grid-cols-2 md:items-start lg:gap-16 place-items-center ">
         {/* Left: stacked images */}
-        <div className="relative order-2 md:order-1">
+        <div className="relative order-2 md:order-1 overflow-hidden">
           {/* back image */}
-          <div className="relative left-16 top-[-12px] hidden w-[76%] overflow-hidden rounded-md shadow-xl ring-1 ring-black/10 lg:block">
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="relative left-16 top-[-12px] hidden w-[76%] overflow-hidden rounded-md shadow-xl ring-1 ring-black/10 lg:block"
+          >
             <img
               src={secondaryImage}
               alt="Hospital interior"
               className="h-full w-full object-cover"
             />
-          </div>
+          </motion.div>
           {/* front image */}
-          <div className="relative z-10 w-[100%] lg:w-[78%] overflow-hidden rounded-md shadow-2xl ring-1 ring-black/100">
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+            className="relative z-10 w-[100%] lg:w-[78%] overflow-hidden rounded-md shadow-2xl ring-1 ring-black/100"
+          >
             <img
               src={primaryImage}
               alt="Hospital exterior"
               className="h-full w-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
 
         {/* Right: heading + copy + checklist */}
-        <div className="order-1 md:order-2">
-          <div className="mb-6 flex items-center gap-4">
+        <div className="order-1 md:order-2 overflow-hidden">
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="mb-6 flex items-center gap-4"
+          >
             <div className="h-[2px] w-10 rounded bg-blue-600" />
             <h2 className="text-xl font-extrabold text-blue sm:text-2xl">
               Welcome to <span className="text-darkGray">REGENX</span> Hospital
             </h2>
-          </div>
+          </motion.div>
 
-          <p className="max-w-xl text-base leading-7 text-darkGray">{intro}</p>
+          <motion.p
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-xl text-base leading-7 text-darkGray"
+          >
+            {intro}
+          </motion.p>
 
           <ul className="mt-8 space-y-5">
             {bullets.map((line, i) => (
-              <li key={i} className="flex max-w-xl items-start gap-4">
+              <motion.li
+                initial={{ x: 100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true }}
+                key={i}
+                className="flex max-w-xl items-start gap-4"
+              >
                 <span className="mt-0.5 inline-flex h-9 w-9 flex-none items-center justify-center rounded-full bg-blue-50 ring-1 ring-blue-200">
                   <Check className="h-5 w-5 text-blue-600" />
                 </span>
                 <p className="text-zinc-700">{line}</p>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>

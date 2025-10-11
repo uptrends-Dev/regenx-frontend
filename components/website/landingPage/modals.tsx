@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-
+import { motion } from "framer-motion";
 // Our Model section — TSX + TailwindCSS (Hover-enhanced)
 // Drop this component anywhere in your app. Tailwind required.
 // Uses "group" and transitions only (no JS libs) for silky hover effects.
@@ -31,7 +32,7 @@ const PillarCard: React.FC<{
   title: string;
   items: { label: string; text: string }[];
 }> = ({ index, title, items }) => (
-  <div className="group/card relative rounded-3xl bg-white p-8  py-12  shadow-lg ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:ring-sky-300/60">
+  <motion.div className="group/card relative rounded-3xl bg-white p-8  py-12  shadow-lg ring-1 ring-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:ring-sky-300/60">
     {/* Subtle gradient frame on hover */}
     <div
       aria-hidden
@@ -39,7 +40,10 @@ const PillarCard: React.FC<{
     />
 
     {/* Top-right accent */}
-    <span aria-hidden className="absolute -right-2 -top-2 h-10 w-10 rounded-full bg-sky-200/40 blur-xl transition-opacity duration-300 group-hover/card:opacity-70" />
+    <span
+      aria-hidden
+      className="absolute -right-2 -top-2 h-10 w-10 rounded-full bg-sky-200/40 blur-xl transition-opacity duration-300 group-hover/card:opacity-70"
+    />
 
     <NumberBadge index={index} />
 
@@ -68,15 +72,21 @@ const PillarCard: React.FC<{
       aria-hidden
       className="pointer-events-none absolute inset-x-6 bottom-3 h-1 rounded-full bg-gradient-to-r from-transparent via-sky-400/40 to-transparent opacity-0 blur-sm transition-opacity duration-300 group-hover/card:opacity-100"
     />
-  </div>
+  </motion.div>
 );
 
 export default function OurModelSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white to-sky-50/40 py-16">
       {/* Soft background blobs */}
-      <div aria-hidden className="pointer-events-none absolute -top-20 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-sky-200/30 blur-3xl" />
-      <div aria-hidden className="pointer-events-none absolute -bottom-24 right-10 h-72 w-72 rounded-full bg-sky-300/20 blur-3xl" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-20 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-sky-200/30 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-24 right-10 h-72 w-72 rounded-full bg-sky-300/20 blur-3xl"
+      />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -91,50 +101,71 @@ export default function OurModelSection() {
 
         {/* Cards */}
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:mt-12 lg:grid-cols-3">
-          <PillarCard
-            index={1}
-            title="REGENX ADVANCED LABS"
-            items={[
-              {
-                label: "BIOCORE",
-                text: "disease treatment journeys (PRP, stem cells, exosomes).",
-              },
-              {
-                label: "LIFESCAN",
-                text: "lifestyle & rehabilitation (diagnostics, IV drips, preventive care).",
-              },
-            ]}
-          />
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
+            <PillarCard
+              index={1}
+              title="REGENX ADVANCED LABS"
+              items={[
+                {
+                  label: "BIOCORE",
+                  text: "disease treatment journeys (PRP, stem cells, exosomes).",
+                },
+                {
+                  label: "LIFESCAN",
+                  text: "lifestyle & rehabilitation (diagnostics, IV drips, preventive care).",
+                },
+              ]}
+            />
+          </motion.div>
 
-          <PillarCard
-            index={2}
-            title="SYNATRIA"
-            items={[
-              {
-                label: "RECHARGE",
-                text: "Lifestyle optimization (nutrition, diagnostics, prevention).",
-              },
-              {
-                label: "RECOVER",
-                text: "Structured recovery (infertility, diabetes, ortho, chronic).",
-              },
-            ]}
-          />
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          >
+            <PillarCard
+              index={2}
+              title="SYNATRIA"
+              items={[
+                {
+                  label: "RECHARGE",
+                  text: "Lifestyle optimization (nutrition, diagnostics, prevention).",
+                },
+                {
+                  label: "RECOVER",
+                  text: "Structured recovery (infertility, diabetes, ortho, chronic).",
+                },
+              ]}
+            />
+          </motion.div>
 
-          <PillarCard
-            index={3}
-            title="REGENX INNOVATE"
-            items={[
-              {
-                label: "COMMUNITY",
-                text: "podcasts, public awareness, networking.",
-              },
-              {
-                label: "RESEARCH & EDUCATION",
-                text: "doctor training, workshops, academic collaborations.",
-              },
-            ]}
-          />
+          <motion.div
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+          >
+            <PillarCard
+              index={3}
+              title="REGENX INNOVATE"
+              items={[
+                {
+                  label: "COMMUNITY",
+                  text: "podcasts, public awareness, networking.",
+                },
+                {
+                  label: "RESEARCH & EDUCATION",
+                  text: "doctor training, workshops, academic collaborations.",
+                },
+              ]}
+            />
+          </motion.div>
         </div>
       </div>
     </section>

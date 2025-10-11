@@ -13,13 +13,12 @@ function StatCard({
   const reduce = useReducedMotion();
   return (
     <motion.div
-      className="group relative overflow-hidden rounded-2xl bg-darkGray p-6 text-center ring-1 ring-white/10 shadow-lg transition hover:shadow-2xl focus-within:-translate-y-1"
-      initial={reduce ? undefined : { opacity: 0, y: 10 }}
-      whileInView={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
+      className="group relative overflow-hidden rounded-2xl bg-darkGray p-6 text-center ring-1 ring-white/10 shadow-lg transition  focus-within:-translate-y-1"
+      initial={ { opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      whileHover={reduce ? undefined : { y: -4 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      tabIndex={0}
+      whileHover={{ y: -4 }}
     >
       {/* sweep highlight */}
       <motion.div

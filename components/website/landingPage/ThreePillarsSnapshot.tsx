@@ -1,6 +1,7 @@
+'use client'
 import React from "react";
 import { Cpu, HeartPulse, Microscope } from "lucide-react";
-
+import { motion } from "framer-motion";
 function PillarCard({
   icon,
   title,
@@ -11,7 +12,11 @@ function PillarCard({
   items: string[];
 }) {
   return (
-    <div
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1, ease: "easeOut", delay:0.1 }}
+      viewport={{ once: true }}
       className="
         group relative overflow-hidden rounded-2xl bg-darkGray p-6 text-center
         shadow-lg ring-1 ring-white/5 transition
@@ -51,7 +56,7 @@ function PillarCard({
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -59,7 +64,12 @@ export default function ThreePillarsSnapshot() {
   return (
     <section className="w-full bg-lightGray/20">
       <div className="py-12 px-6 max-w-7xl mx-auto text-center text-black">
-        <h2 className="text-3xl slate-900 font-extrabold sm:text-4xl">Our Three Pillars</h2>
+        <motion.h2
+        initial={{y: 20 , opacity:0}}
+        whileInView={{y:0 , opacity:1}}
+        transition={{duration:1 , ease:"easeOut"}}
+        viewport={{once:true}}
+        className="text-3xl slate-900 font-extrabold sm:text-4xl">Our Three Pillars</motion.h2>
         <p className="mt-4 max-w-3xl mx-auto text-base text-darkGray">
           At RegenX, our strength lies in three core pillars that drive innovation in healthcare.
         </p>

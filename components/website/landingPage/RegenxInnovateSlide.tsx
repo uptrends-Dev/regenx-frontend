@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-
+import { motion } from "framer-motion";
 // REGENX INNOVATE – hero/slide block in TSX + Tailwind
 // Pass your images via props or replace the default placeholders below.
 
@@ -12,12 +13,15 @@ type InnovateSlideProps = {
 export default function RegenxInnovateSlide({
   bgImage = "/images/p7.jpg",
   micImage = "/images/p6.jpg",
-  logoImage,
 }: InnovateSlideProps) {
   return (
     <section className="relative isolate overflow-hidden bg-white">
       {/* Background doctors image, washed out */}
-      <div
+      <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: "easeOut" }}
         className="absolute inset-0 -z-10 bg-slate-200/50 [mask-image:linear-gradient(to_right,black,black,transparent)]"
         style={{
           backgroundImage: `url(${bgImage})`,
@@ -28,24 +32,27 @@ export default function RegenxInnovateSlide({
       />
 
       {/* Foreground mic image on the right */}
-      <div className="  pointer-events-none absolute inset-y-0 right-0 -z-0 hidden w-[46%] items-end justify-end lg:flex">
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+        className="  pointer-events-none absolute inset-y-0 right-0 -z-0 hidden w-[46%] items-end justify-end lg:flex"
+      >
         <img
           src={micImage}
           alt="Podcast microphone"
           className="h-full w-auto object-contain opacity-90 "
         />
-      </div>
+      </motion.div>
 
-      {/* Optional logo */}
-      {logoImage && (
-        <img
-          src={logoImage}
-          alt="Logo"
-          className="absolute right-6 top-6 h-8 w-auto opacity-80"
-        />
-      )}
-
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 py-12 sm:px-8 lg:grid-cols-12 lg:px-12 lg:py-16">
+      <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+        className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 py-12 sm:px-8 lg:grid-cols-12 lg:px-12 lg:py-16"
+      >
         {/* Title */}
         <div className="z-10 lg:col-span-7 xl:col-span-6">
           <h2 className="text-3xl font-extrabold tracking-tight text-sky-400 sm:text-4xl">
@@ -60,7 +67,8 @@ export default function RegenxInnovateSlide({
             <ul className="space-y-6">
               <li>
                 <h3 className="flex items-center gap-3 text-lg font-bold text-slate-900">
-                  <span className="h-2.5 w-2.5 rounded-full bg-sky-400" /> Education:
+                  <span className="h-2.5 w-2.5 rounded-full bg-sky-400" />{" "}
+                  Education:
                 </h3>
                 <p className="mt-2 max-w-prose text-slate-700">
                   Training, workshops, and academic collaborations.
@@ -69,7 +77,8 @@ export default function RegenxInnovateSlide({
 
               <li>
                 <h3 className="flex items-center gap-3 text-lg font-bold text-slate-900">
-                  <span className="h-2.5 w-2.5 rounded-full bg-sky-400" /> Community:
+                  <span className="h-2.5 w-2.5 rounded-full bg-sky-400" />{" "}
+                  Community:
                 </h3>
                 <p className="mt-2 max-w-prose text-slate-700">
                   Podcast, webinars, and case studies with global experts.
@@ -78,11 +87,12 @@ export default function RegenxInnovateSlide({
 
               <li>
                 <h3 className="flex items-center gap-3 text-lg font-bold text-slate-900">
-                  <span className="h-2.5 w-2.5 rounded-full bg-sky-400" /> Goals:
+                  <span className="h-2.5 w-2.5 rounded-full bg-sky-400" />{" "}
+                  Goals:
                 </h3>
                 <p className="mt-2 max-w-prose text-slate-700">
-                  Advance medical education, build networks, and position Egypt as a regional
-                  leader in regenerative medicine.
+                  Advance medical education, build networks, and position Egypt
+                  as a regional leader in regenerative medicine.
                 </p>
               </li>
             </ul>
@@ -91,7 +101,7 @@ export default function RegenxInnovateSlide({
 
         {/* Spacer for mic on large screens */}
         <div className="lg:col-span-5 xl:col-span-6" />
-      </div>
+      </motion.div>
     </section>
   );
 }
